@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
   :root{
     --bg: #F5F0E6;
@@ -16,10 +17,13 @@
     --ochre: #C98A3B;
     --sky: #6C8CA6;
     --paper-line: rgba(43,38,32,0.12);
-    --max: 920px;
+    --max: 1250px;
   }
+
   *{box-sizing:border-box;}
+
   html{scroll-behavior:smooth;}
+
   body{
     margin:0;
     background:var(--bg);
@@ -28,16 +32,32 @@
     line-height:1.6;
     -webkit-font-smoothing:antialiased;
   }
+
   h1,h2,h3,.display{
     font-family:'Fraunces', serif;
     font-weight:500;
     letter-spacing:-0.01em;
     margin:0;
   }
-  a{color:var(--juniper); text-decoration-thickness:1px; text-underline-offset:3px;}
+
+  a{
+    color:var(--juniper);
+    text-decoration-thickness:1px;
+    text-underline-offset:3px;
+  }
+
   a:hover{color:var(--ochre);}
-  a:focus-visible, button:focus-visible{outline:2px solid var(--ochre); outline-offset:3px;}
-  img{max-width:100%; display:block;}
+
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--ochre);
+    outline-offset:3px;
+  }
+
+  img{
+    max-width:100%;
+    display:block;
+  }
+
   @media (prefers-reduced-motion: reduce){
     html{scroll-behavior:auto;}
     *{animation:none !important; transition:none !important;}
@@ -45,55 +65,79 @@
 
   /* Nav */
   nav.site-nav{
-    position:sticky; top:0; z-index:50;
-    display:flex; justify-content:center; gap:2rem;
+    position:sticky;
+    top:0;
+    z-index:50;
+    display:flex;
+    justify-content:center;
+    gap:2rem;
     padding:1.1rem 1.5rem;
     background:rgba(245,240,230,0.9);
-    backdrop-filter: blur(6px);
+    backdrop-filter:blur(6px);
     border-bottom:1px solid var(--paper-line);
     font-size:0.95rem;
   }
+
   nav.site-nav a{
-    color:var(--ink-soft); text-decoration:none; font-weight:500;
+    color:var(--ink-soft);
+    text-decoration:none;
+    font-weight:500;
   }
+
   nav.site-nav a:hover{color:var(--juniper);}
 
-  section{ padding: 5rem 1.5rem; }
-  .wrap{ max-width:var(--max); margin:0 auto; }
+  section{padding:5rem 1.5rem;}
+
+  .wrap{
+    max-width:var(--max);
+    margin:0 auto;
+  }
 
   /* Hero */
   .hero{
     position:relative;
     padding:0;
-    min-height: 78vh;
+    min-height:78vh;
     display:flex;
     align-items:flex-end;
     overflow:hidden;
   }
+
   .hero-photo{
-    position:absolute; inset:0;
-    width:100%; height:100%;
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
     object-fit:cover;
-    filter: saturate(0.92) contrast(1.02);
+    filter:saturate(0.92) contrast(1.02);
   }
+
   .hero-scrim{
-    position:absolute; inset:0;
-    background: linear-gradient(180deg, rgba(43,38,32,0) 40%, rgba(43,38,32,0.55) 100%);
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+      180deg,
+      rgba(43,38,32,0) 40%,
+      rgba(43,38,32,0.55) 100%
+    );
   }
+
   .hero-inner{
     position:relative;
     width:100%;
     max-width:var(--max);
     margin:0 auto;
-    padding: 0 1.5rem 2.5rem;
+    padding:0 1.5rem 2.5rem;
     color:#F5F0E6;
   }
+
   .hero-inner h1{
-    font-size: clamp(3rem, 9vw, 6rem);
+    font-size:clamp(3rem, 9vw, 6rem);
     line-height:0.95;
     color:#F5F0E6;
     margin-left:-0.03em;
   }
+
   .hero-inner p.role{
     font-family:'Fraunces', serif;
     font-style:italic;
@@ -105,31 +149,31 @@
 
   /* Section headers */
   .section-head{
-    display:flex; align-items:baseline; gap:1rem;
+    display:flex;
+    align-items:baseline;
+    gap:1rem;
     margin-bottom:2.5rem;
     border-bottom:1px solid var(--paper-line);
     padding-bottom:0.75rem;
   }
-  .section-head h2{
-    font-size:2.1rem;
-  }
+
+  .section-head h2{font-size:2.1rem;}
+
   .section-head span{
     font-family:'Public Sans', sans-serif;
     color:var(--ink-soft);
     font-size:0.95rem;
   }
 
-  /* Research layout */
+  /* Research */
   .research-grid{
-    display:grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 3rem;
-    align-items:start;
+    display:block;
   }
-  .research-grid figure{ margin:0; }
-  .research-grid figcaption{
-    font-size:0.85rem; color:var(--ink-soft); margin-top:0.6rem;
+
+  .research-grid p{
+    max-width:100ch;
   }
+
   .pull{
     font-family:'Fraunces', serif;
     font-style:italic;
@@ -139,53 +183,118 @@
     color:var(--juniper);
     border-left:3px solid var(--ochre);
     padding-left:1.25rem;
-    margin: 2.25rem 0;
-    max-width: 40ch;
+    margin:2.25rem 0;
+    max-width:40ch;
   }
-  p{ max-width:64ch; color:var(--ink); }
-  .research-grid p{ max-width:none; }
 
-  .meta-block{ margin-top:2.5rem; }
+  .meta-block{
+    margin-top:2.5rem;
+  }
+
   .meta-block h3{
-    font-size:1.15rem; font-weight:600; margin-bottom:0.6rem;
+    font-size:1.15rem;
+    font-weight:600;
+    margin-bottom:0.6rem;
   }
+
   .meta-block ul{
-    list-style:none; margin:0; padding:0;
+    list-style:none;
+    margin:0;
+    padding:0;
   }
+
   .meta-block li{
     padding:0.4rem 0;
     border-bottom:1px dotted var(--paper-line);
     font-size:0.97rem;
-    display:flex; justify-content:space-between; gap:1rem;
+    display:flex;
+    justify-content:space-between;
+    gap:1rem;
   }
-  .meta-block li .yr{ color:var(--ink-soft); white-space:nowrap; }
+
+  .meta-block li .yr{
+    color:var(--ink-soft);
+    white-space:nowrap;
+  }
+
+  .education-section{
+    margin-top:3.5rem;
+  }
+
+  .education-section .meta-block{
+    margin-top:0;
+  }
+
+  .education-section .awards-block{
+    margin-top:3rem;
+  }
 
   .links-row{
-    margin-top:1.25rem; font-size:0.97rem;
+    margin-top:1.25rem;
+    font-size:0.97rem;
   }
-  .links-row a{ margin-right:1.25rem; }
 
-  /* Life section: offset photo essay */
+  .links-row a{margin-right:1.25rem;}
+
+  /* Outreach */
+  .outreach-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:4rem;
+    align-items:stretch;
+  }
+
+  .outreach-grid > div{
+    min-width:0;
+  }
+
+  .outreach-photo{
+    display:flex;
+    height:100%;
+  }
+
+  .outreach-photo figure{
+    margin:0;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+  }
+
+  .outreach-photo img{
+    width:100%;
+    flex:1;
+    min-height:0;
+    object-fit:cover;
+  }
+
+  .outreach-photo figcaption{
+    font-size:0.85rem;
+    color:var(--ink-soft);
+    margin-top:0.6rem;
+  }
+
+  /* Life section */
   .life-essay{
     display:grid;
-    grid-template-columns: 1fr;
+    grid-template-columns:1fr;
     gap:2.5rem;
   }
-  .life-photo-row{
-    display:grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap:2rem;
-    align-items:center;
-    margin: 3rem 0;
+
+  .life-photo-center{
+    margin:2rem 0;
   }
-  .life-photo-row.reverse{ grid-template-columns: 1fr 1.2fr; }
-  .life-photo-row.reverse .life-photo{ order:2; }
-  .life-photo img{
-    border-radius:2px;
+
+  .life-photo-center img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
   }
-  .life-photo.tilt img{ transform: rotate(-1.2deg); }
-  .life-photo figcaption{
-    font-size:0.85rem; color:var(--ink-soft); margin-top:0.6rem; font-style:italic;
+
+  .life-photo-center figcaption{
+    font-size:0.85rem;
+    color:var(--ink-soft);
+    margin-top:0.6rem;
+    font-style:italic;
     font-family:'Fraunces', serif;
   }
 
@@ -202,11 +311,18 @@
     background:var(--ink);
     color:#F5F0E6;
   }
-  #contact .section-head{ border-bottom-color:rgba(245,240,230,0.2); }
-  #contact .section-head span{ color:#C7BEAC; }
-  #contact h2{ color:#F5F0E6; }
-  #contact a{ color:#E9C08A; }
-  #contact a:hover{ color:#fff; }
+
+  #contact .section-head{
+    border-bottom-color:rgba(245,240,230,0.2);
+  }
+
+  #contact .section-head span{color:#C7BEAC;}
+
+  #contact h2{color:#F5F0E6;}
+
+  #contact a{color:#E9C08A;}
+
+  #contact a:hover{color:#fff;}
 
   footer{
     text-align:center;
@@ -215,28 +331,50 @@
     color:var(--ink-soft);
     background:var(--ink);
   }
-  footer a{ color:#E9C08A; }
+
+  footer a{color:#E9C08A;}
 
   @media (max-width:760px){
-    .research-grid{ grid-template-columns:1fr; }
-    .life-photo-row, .life-photo-row.reverse{ grid-template-columns:1fr; }
-    .life-photo-row.reverse .life-photo{ order:0; }
-    nav.site-nav{ gap:1.1rem; font-size:0.85rem; flex-wrap:wrap; }
-    .hero{ min-height:60vh; }
+    .outreach-grid{
+      grid-template-columns:1fr;
+    }
+
+    .research-grid{
+      display:block;
+    }
+
+    nav.site-nav{
+      gap:1.1rem;
+      font-size:0.85rem;
+      flex-wrap:wrap;
+    }
+
+    .hero{min-height:60vh;}
+
+    .life-photo-center img{
+      height:220px;
+    }
   }
 </style>
 </head>
+
 <body>
 
 <nav class="site-nav">
   <a href="#home">Home</a>
   <a href="#work">Research</a>
+  <a href="#outreach">Outreach</a>
   <a href="#life">Life</a>
   <a href="#contact">Contact</a>
 </nav>
 
 <article id="home" class="hero">
-  <img class="hero-photo" src="images/Murti Nauth on One Legged Red 11b-9.jpg" alt="Murti Nauth" title="Climbing in TN" />
+  <img
+    class="hero-photo"
+    src="images/Murti Nauth on One Legged Red 11b-9.jpg"
+    alt="Murti Nauth"
+    title="Climbing in TN"
+  />
   <div class="hero-scrim"></div>
   <div class="hero-inner">
     <h1>Murti Nauth</h1>
@@ -246,54 +384,88 @@
 
 <section id="work">
   <div class="wrap">
+
     <div class="section-head">
       <h2>Research</h2>
       <span>Spacecraft data, planetary environments, solar wind electrons</span>
     </div>
 
     <div class="research-grid">
-      <div>
-        <p>Spacecraft explore places humans simply cannot. Whether it's an atmosphere's composition, the magnetic field's configuration, or the pattern of craters on a surface, these observatories teach us about the environments of Earth's planetary neighbors &mdash; and, increasingly, about the star they all orbit.</p>
 
-        <p>My PhD research used data from NASA's MAVEN mission to study electron acceleration in the Martian magnetotail, the region where the Sun's magnetic field drapes around the planet much like it does around a comet. Understanding what happens there tells us how Mars interacts with the Sun, and helps us reason about other unmagnetized bodies &mdash; Venus, and exoplanets beyond our solar system.</p>
+      <p>
+        Spacecraft explore places humans simply cannot. Whether it's an atmosphere's
+        composition, the magnetic field's configuration, or the pattern of craters on
+        a surface, these observatories teach us about the environments of Earth's
+        planetary neighbors &mdash; and, increasingly, about the star they all orbit.
+      </p>
 
-        <p class="pull"> Robotic explorers go places humans cannot; working together allows us to uncover the solar system's mysteries.</p>
+      <p>
+        My PhD research used data from NASA's MAVEN mission to study electron
+        acceleration in the Martian magnetotail, the region where the Sun's magnetic
+        field drapes around the planet much like it does around a comet. Understanding
+        what happens there tells us how Mars interacts with the Sun, and helps us reason
+        about other unmagnetized bodies &mdash; Venus, and exoplanets beyond our solar system.
+      </p>
 
-        <p>I started studying Mars an undergraduate research assistant at the Laboratory for Atmospheric and Space Physics at the University of Colorado Boulder. 
-          Now, as a postdoctoral researcher at Los Alamos National Laboratory, I use my training in space plasma physics to study solar electron bursts at Earth.
-          This work is in support of NASA's IMAP mission as part of the Solar Wind Electron (SWE) instrument team. </p>
+      <p class="pull">
+        Robotic explorers go places humans cannot; working together allows us to uncover
+        the solar system's mysteries.
+      </p>
 
-        <div class="links-row">
-          <a href="https://scholar.google.com/citations?user=Q_XeYvAAAAAJ&hl=en&oi=ao">Publications</a>
-          <a href="https://orcid.org/0000-0002-5149-5774">ORCID</a>
-          <a href="images/CV.pdf">CV</a>
-        </div>
+      <p>
+        I started studying Mars an undergraduate research assistant at the Laboratory
+        for Atmospheric and Space Physics at the University of Colorado Boulder.
+        Now, as a postdoctoral researcher at Los Alamos National Laboratory, I use my
+        training in space plasma physics to study solar electron bursts at Earth.
+        This work is in support of NASA's IMAP mission as part of the Solar Wind Electron
+        (SWE) instrument team.
+      </p>
+
+      <div class="links-row">
+        <a href="https://scholar.google.com/citations?user=Q_XeYvAAAAAJ&hl=en&oi=ao">Publications</a>
+        <a href="https://orcid.org/0000-0002-5149-5774">ORCID</a>
+        <a href="images/CV.pdf">CV</a>
       </div>
 
-      <div>
-        <figure>
-          <img src="images/agu.jpeg" alt="At AGU" />
-          <figcaption>At the American Geophysical Union conference.</figcaption>
-        </figure>
+      <div class="education-section">
 
         <div class="meta-block">
           <h3>Education</h3>
           <ul>
-            <li><span>Ph.D., Earth &amp; Planetary Science &mdash; UC Berkeley</span></li>
-            <li><span>M.S. Physics (astrophysics) &mdash; Fisk University, Fisk&ndash;Vanderbilt Bridge Fellow</span></li>
-            <li><span>B.A. Astronomy &amp; International Affairs, Economics minor &mdash; University of Colorado Boulder</span></li>
+            <li>
+              <span>Ph.D., Earth &amp; Planetary Science &mdash; University of California Berkeley</span>
+            </li>
+            <li>
+              <span>M.S. Physics (astrophysics) &mdash; Fisk University, Fisk&ndash;Vanderbilt Bridge Fellow</span>
+            </li>
+            <li>
+              <span>B.A. Astronomy &amp; International Affairs, Economics minor &mdash; University of Colorado Boulder</span>
+            </li>
           </ul>
         </div>
 
-        <div class="meta-block">
+        <div class="meta-block awards-block">
           <h3>Awards</h3>
           <ul>
-            <li><span>Research University Alliance Fellow</span><span class="yr">2024</span></li>
-            <li><span>NASA SCoPE AGU/SciAct Travel Award</span><span class="yr">2022</span></li>
-            <li><span>NASA FINESST Research Grant</span><span class="yr">2021</span></li>
-            <li><span>Robert P. Lin Fellowship</span><span class="yr">2020</span></li>
+            <li>
+              <span>Research University Alliance Fellow</span>
+              <span class="yr">2024</span>
+            </li>
+            <li>
+              <span>NASA SCoPE AGU/SciAct Travel Award</span>
+              <span class="yr">2022</span>
+            </li>
+            <li>
+              <span>NASA FINESST Research Grant</span>
+              <span class="yr">2021</span>
+            </li>
+            <li>
+              <span>Robert P. Lin Fellowship</span>
+              <span class="yr">2020</span>
+            </li>
           </ul>
         </div>
+
       </div>
     </div>
   </div>
@@ -301,73 +473,107 @@
 
 <section id="outreach">
   <div class="wrap">
+
     <div class="section-head">
       <h2>Outreach</h2>
       <span>Bringing astronomy to more people</span>
     </div>
+
     <div class="outreach-grid">
+
       <div>
-        <p>As a visiting astronomer at Black Canyon of the Gunnison National Park's AstroFest (2022), I gave a series of "porch talks" on life on Mars and helped guide public telescope observing across the three-day festival, reaching hundreds of visitors.</p>
-        <p>From 2013 to 2017, I worked at Fiske Planetarium &mdash; operating the 8K dome, giving talks, running the portable dome for K-12 students, and producing laser light shows &mdash; helping make the distant world of astronomy feel closer to families and visitors of all ages.</p>
+        <p>
+          As a visiting astronomer at Black Canyon of the Gunnison National Park's
+          AstroFest (2022), I gave a series of "porch talks" on life on Mars and helped
+          guide public telescope observing across the three-day festival, reaching
+          hundreds of visitors.
+        </p>
+
+        <p>
+          From 2013 to 2017, I worked at Fiske Planetarium &mdash; operating the 8K dome,
+          giving talks, running the portable dome for K-12 students, and producing laser
+          light shows &mdash; helping make the distant world of astronomy feel closer to
+          families and visitors of all ages.
+        </p>
       </div>
 
-      <div class="image-row">
-        <img src="images/black_canyon.jpeg" alt="Outreach at Black Canyon of the Gunnison" />
-        <figcaption>Sharing the night sky at Black Canyon of the Gunnison's AstroFest.</figcaption>
-        <style>
-          /* 1. Aligns the images in a single horizontal row */
-          .image-row {
-            display: flex;
-            gap: 15px;            /* Adds space between the images */
-            justify-content: center; /* Centers the row on the page (optional) */
-          }
-          
-          /* 2. Controls the size of all images inside the row */
-          .image-row img {
-            width: 200px;         /* Sets the desired width of each image */
-            height: 150px;        /* Sets the desired height of each image */
-            object-fit: cover;    /* Prevents the image from squishing or stretching */
-          }
-</style>
+      <div class="outreach-photo">
+        <figure>
+          <img
+            src="images/black_canyon.jpeg"
+            alt="Outreach at Black Canyon of the Gunnison"
+          />
+          <figcaption>
+            Sharing the night sky at Black Canyon of the Gunnison's AstroFest.
+          </figcaption>
+        </figure>
       </div>
+
     </div>
   </div>
 </section>
-  
+
 <section id="life">
   <div class="wrap">
+
     <div class="section-head">
       <h2>Life</h2>
       <span>Where the science comes from</span>
     </div>
 
     <div class="life-essay">
-      <p>I'm a <a href="https://www.google.com/maps/place/Guyana/@4.9396692,-61.203137,7z/data=!3m1!4b1!4m5!3m4!1s0x8dafefaf60d8c2b3:0x48e38867b6e54440!8m2!3d4.860416!4d-58.93018">Guyanese</a>-American raised in Colorado. My path here wasn't a straight line &mdash; I started out planning a career in international affairs, then changed course when I saw how little funding existed in that field. Planetary science gave me a way to build a meaningful career without financial sacrifice, in a field where the "leaky pipeline" of academia loses too many capable students along the way.</p>
 
-      <p>I got here because compassionate mentors guided me as both a scientist and a person. As a first-generation higher-education student whose grandmother is illiterate, part of what drives me now is making sure students from similar backgrounds have that same guidance.</p>
+      <p>
+        I'm a
+        <a href="https://www.google.com/maps/place/Guyana/@4.9396692,-61.203137,7z/data=!3m1!4b1!4m5!3m4!1s0x8dafefaf60d8c2b3:0x48e38867b6e54440!8m2!3d4.860416!4d-58.93018">
+          Guyanese
+        </a>-American raised in Colorado. My path here wasn't a straight line &mdash;
+        I started out planning a career in international affairs, then changed course
+        when I saw how little funding existed in that field. Planetary science gave me
+        a way to build a meaningful career without financial sacrifice, in a field where
+        the "leaky pipeline" of academia loses too many capable students along the way.
+      </p>
 
-        <figure class="life-photo-center">
+      <p>
+        I got here because compassionate mentors guided me as both a scientist and a person.
+        As a first-generation higher-education student whose grandmother is illiterate,
+        part of what drives me now is making sure students from similar backgrounds have
+        that same guidance.
+      </p>
+
+      <figure class="life-photo-center">
         <img src="images/image1.jpeg" alt="Outdoors" />
         <figcaption>Climbing at Indian Creek.</figcaption>
       </figure>
-        
-        <div>
-          <p>Climbing has taught me to move through unusual spaces, literally and otherwise. I wrote an essay for Rock and Ice Magazine (now Climbing Magazine) on how climbers can actively pursue anti-racism.</p>
-          <div class="essay-note">
-            The publisher paywalls the piece, so here's a <a href="images/redpointing_antiracism.pdf">free PDF copy</a>.
-          </div>
+
+      <div>
+        <p>
+          Climbing has taught me to move through unusual spaces, literally and otherwise.
+          I wrote an essay for Rock and Ice Magazine (now Climbing Magazine) on how climbers
+          can actively pursue anti-racism.
+        </p>
+
+        <div class="essay-note">
+          The publisher paywalls the piece, so here's
+          <a href="images/redpointing_antiracism.pdf">a free PDF copy</a>.
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
 <section id="contact">
   <div class="wrap">
+
     <div class="section-head">
       <h2>Contact</h2>
     </div>
-    <p style="color:#F5F0E6;">If you'd like to connect, email me at murtinauth@berkeley.edu.</p>
+
+    <p style="color:#F5F0E6;">
+      If you'd like to connect, email me at murtinauth@berkeley.edu.
+    </p>
+
   </div>
 </section>
 
