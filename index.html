@@ -311,10 +311,26 @@
         <p>As a visiting astronomer at Black Canyon of the Gunnison National Park's AstroFest (2022), I gave a series of "porch talks" on life on Mars and helped guide public telescope observing across the three-day festival, reaching hundreds of visitors.</p>
         <p>From 2013 to 2017, I worked at Fiske Planetarium &mdash; operating the 8K dome, giving talks, running the portable dome for K-12 students, and producing laser light shows &mdash; helping make the distant world of astronomy feel closer to families and visitors of all ages.</p>
       </div>
-      <figure>
+
+      <div class="image-row">
         <img src="images/black_canyon.jpeg" alt="Outreach at Black Canyon of the Gunnison" />
         <figcaption>Sharing the night sky at Black Canyon of the Gunnison's AstroFest.</figcaption>
-      </figure>
+        <style>
+          /* 1. Aligns the images in a single horizontal row */
+          .image-row {
+            display: flex;
+            gap: 15px;            /* Adds space between the images */
+            justify-content: center; /* Centers the row on the page (optional) */
+          }
+          
+          /* 2. Controls the size of all images inside the row */
+          .image-row img {
+            width: 200px;         /* Sets the desired width of each image */
+            height: 150px;        /* Sets the desired height of each image */
+            object-fit: cover;    /* Prevents the image from squishing or stretching */
+          }
+</style>
+      </div>
     </div>
   </div>
 </section>
