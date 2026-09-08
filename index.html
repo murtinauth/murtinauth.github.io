@@ -173,7 +173,30 @@
   .research-grid p{
     max-width:100ch;
   }
+  .research-photo{
+    display:flex;
+    height:90%;
+  }
+  
+  .research-photo figure{
+    margin:0;
+    width:80%;
+    display:flex;
+    flex-direction:column;
+  }
 
+  .research-photo img{
+    width:80%;
+    flex:1;
+    min-height:0;
+    object-fit:cover;
+  }
+
+  .research-photo figcaption{
+    font-size:0.85rem;
+    color:var(--ink-soft);
+    margin-top:0.6rem;
+  }
   .pull{
     font-family:'Fraunces', serif;
     font-style:italic;
@@ -406,6 +429,18 @@
         and helps us extrapolate how other unmagnetized bodies (Venus, planets beyond our solar system, etc.) interact with their host stars.
       </p>
 
+         <div class="research-photo">
+        <figure>
+          <img
+            src="images/tail_plot.pdf"
+            alt="plot showing magnetic field rotations and energized electrons"
+          />
+          <figcaption>
+            Figure from my work about energized electrons co-occurring with current sheets in the Martian magnetotail. 
+          </figcaption>
+        </figure>
+      </div>
+      
       <p class="pull">
         Robotic explorers go places humans cannot; working together allows us to uncover
         the solar system's mysteries.
@@ -420,15 +455,7 @@
         (SWE) instrument team.
       </p>
 
-         <figure>
-          <img
-            src="tail_plot.pdf"
-            alt="plot showing magnetic field rotations and energized electrons"
-          />
-          <figcaption>
-            Figure from my work about energized electrons co-occurring with current sheets in the Martian magnetotail. 
-          </figcaption>
-        </figure>
+
       
 
       <div class="links-row">
