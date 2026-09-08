@@ -166,37 +166,35 @@
   }
 
   /* Research */
-  .research-grid{
-    display:block;
-  }
+.research-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:2rem;
+  align-items:start;
+}
 
-  .research-grid p{
-    max-width:100ch;
-  }
-  .research-photo{
-    display:flex;
-    height:90%;
-  }
-  
-  .research-photo figure{
-    margin:0;
-    width:80%;
-    display:flex;
-    flex-direction:column;
-  }
+.research-grid > div,
+.research-grid > p{
+  min-width:0;
+}
 
-  .research-photo img{
-    width:80%;
-    flex:1;
-    min-height:0;
-    object-fit:cover;
-  }
+.research-photo{
+  display:flex;
+  height:auto;
+}
 
-  .research-photo figcaption{
-    font-size:0.85rem;
-    color:var(--ink-soft);
-    margin-top:0.6rem;
-  }
+.research-photo figure{
+  margin:0;
+  width:80%;
+  display:flex;
+  flex-direction:column;
+}
+
+.research-photo img{
+  width:100%;
+  height:auto;
+  object-fit:contain;
+}
   .pull{
     font-family:'Fraunces', serif;
     font-style:italic;
@@ -416,47 +414,49 @@
 
     <div class="research-grid">
 
-      <p>
+  <div>
+    <p>
         Spacecraft explore places humans simply cannot. Whether it's an atmosphere's composition, 
         the magnetic field's configuration, or the pattern of craters on a surface, these observatories teach 
         us about the environments of Earth's planetary neighbors and how they are connected to the Sun.
-      </p>
+    </p>
 
-      <p>
+    <p>
         My PhD research used data from NASA's MAVEN mission to study electron acceleration 
         in the Martian magnetotail, the region where the Sun's magnetic field drapes around the 
         planet much like it does around a comet. Understanding what happens there tells us how Mars interacts with the Sun, 
         and helps us extrapolate how other unmagnetized bodies (Venus, planets beyond our solar system, etc.) interact with their host stars.
-      </p>
+    </p>
 
-         <div class="research-photo">
-        <figure>
-          <img
-            src="tail_plot.pdf"
-            alt="plot showing magnetic field rotations and energized electrons"
-          />
-          <figcaption>
-            Figure from my work about energized electrons co-occurring with current sheets in the Martian magnetotail. 
-          </figcaption>
-        </figure>
-      </div>
-      
-      <p class="pull">
+    <p class="pull">
         Robotic explorers go places humans cannot; working together allows us to uncover
         the solar system's mysteries.
-      </p>
+    </p>
 
-      <p>
-        I started studying Mars as an undergraduate research assistant at the Laboratory
+    <p>
+         I started studying Mars as an undergraduate research assistant at the Laboratory
         for Atmospheric and Space Physics at the University of Colorado Boulder.
         Now, as an incoming postdoctoral researcher at Los Alamos National Laboratory, I use my
         training in space plasma physics to study solar electron bursts at Earth.
         This work is in support of NASA's IMAP mission as part of the Solar Wind Electron
         (SWE) instrument team.
-      </p>
+    </p>
+  </div>
 
+  <div class="research-photo">
+    <figure>
+      <img
+        src="tail_plot.pdf"
+        alt="plot showing magnetic field rotations and energized electrons"
+      />
+      <figcaption>
+        Figure from my work about energized electrons co-occurring with current sheets in the Martian magnetotail.
+      </figcaption>
+    </figure>
+  </div>
 
-      
+</div>
+
 
       <div class="links-row">
         <a href="https://scholar.google.com/citations?user=Q_XeYvAAAAAJ&hl=en&oi=ao">Publications</a>
